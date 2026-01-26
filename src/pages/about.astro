@@ -1,0 +1,133 @@
+---
+// About Page
+// Profile section, timeline/skills, personal touch, and newsletter CTA
+import Layout from '../layouts/Layout.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+---
+
+<Layout title="About | Avalumun Sekulla Nyior" description="Learn more about Avalumun Sekulla Nyior" currentPage="/about">
+  <!-- Profile Section -->
+  <section class="container mx-auto px-6 py-24 md:py-32">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="font-heading font-bold text-5xl md:text-6xl mb-12 text-text-primary">
+        About Me
+      </h1>
+      
+      <div class="space-y-8 mb-16">
+        <div class="font-body text-lg md:text-xl text-text-secondary leading-loose">
+          <p class="mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+          <p class="mb-6">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p class="font-bold italic">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+          </p>
+        </div>
+      </div>
+
+      <!-- Profile Image -->
+      <div class="mb-16">
+        <img
+          src="/my_profile3.jpeg"
+          alt="Avalumun Sekulla Nyior - SEO/AEO Optimization Expert"
+          class="w-full max-w-md mx-auto h-auto rounded-lg object-cover shadow-lg border-2 border-black"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills/Timeline Section -->
+  <section class="bg-white border-y-2 border-black py-24">
+    <div class="container mx-auto px-6">
+      <h2 class="font-heading font-bold text-4xl md:text-5xl mb-16 text-center text-text-primary">
+        Skills & Expertise
+      </h2>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 mb-16">
+          <!-- Skills List -->
+          <div>
+            <h3 class="font-heading font-bold text-2xl mb-6 text-violent-red">
+              Core Skills
+            </h3>
+            <ul class="space-y-4 font-body text-lg text-text-secondary">
+              <li class="flex items-start">
+                <span class="text-violent-red mr-3">•</span>
+                <span>Lorem ipsum dolor sit amet</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-violent-red mr-3">•</span>
+                <span>Consectetur adipiscing elit</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-violent-red mr-3">•</span>
+                <span>Sed do eiusmod tempor</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-violent-red mr-3">•</span>
+                <span>Incididunt ut labore et dolore</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-violent-red mr-3">•</span>
+                <span>Magna aliqua ut enim</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Timeline -->
+          <div>
+            <h3 class="font-heading font-bold text-2xl mb-6 text-violent-red">
+              Experience
+            </h3>
+            <div class="space-y-6">
+              <div class="border-l-4 border-violent-red pl-6">
+                <h4 class="font-heading font-bold text-xl mb-2">Current Role</h4>
+                <p class="font-body text-text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+              <div class="border-l-4 border-violent-red pl-6">
+                <h4 class="font-heading font-bold text-xl mb-2">Previous Role</h4>
+                <p class="font-body text-text-secondary">Sed do eiusmod tempor incididunt ut labore et dolore.</p>
+              </div>
+              <div class="border-l-4 border-violent-red pl-6">
+                <h4 class="font-heading font-bold text-xl mb-2">Earlier Role</h4>
+                <p class="font-body text-text-secondary">Magna aliqua ut enim ad minim veniam.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personal Touch Section -->
+  <section class="container mx-auto px-6 py-24">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-heading font-bold text-4xl md:text-5xl mb-8 text-text-primary">
+        What Makes Me Unique
+      </h2>
+      <p class="font-body text-xl text-text-secondary leading-loose mb-6">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+      </p>
+      <p class="font-body text-lg text-text-secondary leading-relaxed">
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+      </p>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA Section -->
+  <section class="bg-white border-y-2 border-black py-24">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-heading font-bold text-4xl md:text-5xl mb-6 text-text-primary">
+          Connect With Me
+        </h2>
+        <p class="font-body text-xl text-text-secondary mb-12 leading-relaxed">
+          Subscribe to my newsletter for the latest insights on SEO and AEO optimization.
+        </p>
+        <NewsletterForm />
+      </div>
+    </div>
+  </section>
+</Layout>

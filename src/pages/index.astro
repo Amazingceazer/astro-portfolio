@@ -1,0 +1,71 @@
+---
+// Homepage
+// Hero section, featured accomplishments, and newsletter CTA
+import Layout from '../layouts/Layout.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import CTAButton from '../components/CTAButton.astro';
+---
+
+<Layout title="Home | Avalumun Sekulla Nyior" description="SEO/AEO optimization expert portfolio" currentPage="/">
+  <!-- Hero Section -->
+  <section class="container mx-auto px-6 py-24 md:py-32">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="font-heading font-bold text-5xl md:text-7xl mb-6 text-text-primary">
+        Avalumun Sekulla Nyior
+      </h1>
+      <p class="font-body text-2xl md:text-3xl text-text-secondary mb-12 leading-relaxed">
+        SEO/AEO Optimization Expert
+      </p>
+      <p class="font-body text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-loose mb-12">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+      </p>
+      <div class="flex justify-center gap-4">
+        <CTAButton text="View Projects" href="/projects" />
+        <CTAButton text="Learn More" href="/about" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Accomplishments Section -->
+  <section class="bg-white border-y-2 border-black py-24">
+    <div class="container mx-auto px-6">
+      <h2 class="font-heading font-bold text-4xl md:text-5xl mb-16 text-center text-text-primary">
+        Featured Work
+      </h2>
+      <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <!-- Accomplishment 1 -->
+        <article class="space-y-4">
+          <h3 class="font-heading font-bold text-2xl text-violent-red">
+            Key Achievement One
+          </h3>
+          <p class="font-body text-lg text-text-secondary leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+          </p>
+        </article>
+
+        <!-- Accomplishment 2 -->
+        <article class="space-y-4">
+          <h3 class="font-heading font-bold text-2xl text-violent-red">
+            Key Achievement Two
+          </h3>
+          <p class="font-body text-lg text-text-secondary leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA Section -->
+  <section class="container mx-auto px-6 py-24">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-heading font-bold text-4xl md:text-5xl mb-6 text-text-primary">
+        Stay Updated
+      </h2>
+      <p class="font-body text-xl text-text-secondary mb-12 leading-relaxed">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Subscribe to receive updates on SEO insights and optimization strategies.
+      </p>
+      <NewsletterForm />
+    </div>
+  </section>
+</Layout>

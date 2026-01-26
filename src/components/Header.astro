@@ -1,0 +1,101 @@
+---
+// Header/Navigation Component
+// Sticky navigation with mobile hamburger menu
+interface Props {
+  currentPage?: string;
+}
+
+const { currentPage = '' } = Astro.props;
+
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/projects', label: 'Projects' },
+];
+---
+
+<header class="sticky top-0 z-50 bg-white border-b-2 border-black">
+  <nav class="container mx-auto px-6 py-4" aria-label="Main navigation">
+    <div class="flex items-center justify-between">
+      <!-- Logo/Name -->
+      <a href="/" class="font-heading font-bold text-2xl text-text-primary hover:text-violent-red transition-colors">
+        Avalumun Sekulla Nyior
+      </a>
+
+      <!-- Desktop Navigation -->
+      <ul class="hidden md:flex items-center space-x-8">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class={`font-heading font-bold text-lg transition-colors ${
+                currentPage === item.href
+                  ? 'text-violent-red'
+                  : 'text-text-primary hover:text-violent-red'
+              }`}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-button"
+        class="md:hidden p-2 text-text-primary hover:text-violent-red transition-colors"
+        aria-label="Toggle mobile menu"
+        aria-expanded="false"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <ul
+      id="mobile-menu"
+      class="hidden md:hidden mt-4 space-y-4 pb-4"
+    >
+      {navItems.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class={`block font-heading font-bold text-lg transition-colors ${
+              currentPage === item.href
+                ? 'text-violent-red'
+                : 'text-text-primary hover:text-violent-red'
+            }`}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuButton && mobileMenu) {
+    menuButton.addEventListener('click', () => {
+      const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isExpanded));
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+</script>

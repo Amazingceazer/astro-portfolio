@@ -1,0 +1,230 @@
+---
+// Projects Page
+// Project grid with cards, optional filters, and prominent newsletter CTA
+import Layout from '../layouts/Layout.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import CTAButton from '../components/CTAButton.astro';
+---
+
+<Layout title="Projects | Avalumun Sekulla Nyior" description="View my portfolio of SEO and AEO optimization projects" currentPage="/projects">
+  <!-- Hero Section -->
+  <section class="container mx-auto px-6 py-24 md:py-32">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="font-heading font-bold text-5xl md:text-6xl mb-6 text-text-primary">
+        Projects
+      </h1>
+      <p class="font-body text-xl md:text-2xl text-text-secondary leading-relaxed">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA - Prominent Placement -->
+  <section class="bg-violent-red py-16 mb-24">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-heading font-bold text-3xl md:text-4xl mb-4 text-white">
+          Stay Updated on New Projects
+        </h2>
+        <p class="font-body text-lg text-white mb-8 opacity-90">
+          Subscribe to receive notifications about new projects and case studies.
+        </p>
+        <div class="max-w-md mx-auto">
+          <form
+            id="projects-newsletter-form"
+            class="space-y-4"
+          >
+            <input
+              type="email"
+              id="projects-newsletter-email"
+              name="email"
+              placeholder="Enter your email"
+              required
+              class="w-full px-6 py-4 rounded-lg font-body text-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-violent-red transition-all text-black"
+            />
+            <div id="projects-newsletter-message" class="hidden text-sm font-body text-white"></div>
+            <button
+              type="submit"
+              class="w-full bg-white text-violent-red font-heading font-bold text-lg px-8 py-4 rounded-lg transition-all duration-300 hover:bg-gray-100 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-violent-red cursor-pointer"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="container mx-auto px-6 pb-24">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
+      <!-- Project 1 -->
+      <article class="border-2 border-black rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+        <div class="bg-gray-100 h-48 flex items-center justify-center">
+          <svg
+            class="w-full h-full"
+            viewBox="0 0 400 300"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="400" height="300" fill="#e5e7eb" />
+            <rect x="50" y="50" width="300" height="200" fill="#d1d5db" />
+            <circle cx="200" cy="150" r="40" fill="#9ca3af" />
+          </svg>
+        </div>
+        <div class="p-6">
+          <h3 class="font-heading font-bold text-2xl mb-3 text-text-primary">
+            Project Alpha
+          </h3>
+          <p class="font-body text-text-secondary leading-relaxed mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <a
+            href="#"
+            class="inline-block font-body font-bold italic text-violent-red hover:text-violent-red-dark transition-colors"
+          >
+            Learn More →
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="border-2 border-black rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+        <div class="bg-gray-100 h-48 flex items-center justify-center">
+          <svg
+            class="w-full h-full"
+            viewBox="0 0 400 300"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="400" height="300" fill="#e5e7eb" />
+            <rect x="50" y="50" width="300" height="200" fill="#d1d5db" />
+            <circle cx="200" cy="150" r="40" fill="#9ca3af" />
+          </svg>
+        </div>
+        <div class="p-6">
+          <h3 class="font-heading font-bold text-2xl mb-3 text-text-primary">
+            Project Beta
+          </h3>
+          <p class="font-body text-text-secondary leading-relaxed mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <a
+            href="#"
+            class="inline-block font-body font-bold italic text-violent-red hover:text-violent-red-dark transition-colors"
+          >
+            Learn More →
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="border-2 border-black rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+        <div class="bg-gray-100 h-48 flex items-center justify-center">
+          <svg
+            class="w-full h-full"
+            viewBox="0 0 400 300"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="400" height="300" fill="#e5e7eb" />
+            <rect x="50" y="50" width="300" height="200" fill="#d1d5db" />
+            <circle cx="200" cy="150" r="40" fill="#9ca3af" />
+          </svg>
+        </div>
+        <div class="p-6">
+          <h3 class="font-heading font-bold text-2xl mb-3 text-text-primary">
+            Project Gamma
+          </h3>
+          <p class="font-body text-text-secondary leading-relaxed mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <a
+            href="#"
+            class="inline-block font-body font-bold italic text-violent-red hover:text-violent-red-dark transition-colors"
+          >
+            Learn More →
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="border-2 border-black rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+        <div class="bg-gray-100 h-48 flex items-center justify-center">
+          <svg
+            class="w-full h-full"
+            viewBox="0 0 400 300"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="400" height="300" fill="#e5e7eb" />
+            <rect x="50" y="50" width="300" height="200" fill="#d1d5db" />
+            <circle cx="200" cy="150" r="40" fill="#9ca3af" />
+          </svg>
+        </div>
+        <div class="p-6">
+          <h3 class="font-heading font-bold text-2xl mb-3 text-text-primary">
+            Project Delta
+          </h3>
+          <p class="font-body text-text-secondary leading-relaxed mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <a
+            href="#"
+            class="inline-block font-body font-bold italic text-violent-red hover:text-violent-red-dark transition-colors"
+          >
+            Learn More →
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Secondary Newsletter CTA -->
+  <section class="container mx-auto px-6 py-24">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-heading font-bold text-4xl md:text-5xl mb-6 text-text-primary">
+        Want to Work Together?
+      </h2>
+      <p class="font-body text-xl text-text-secondary mb-12 leading-relaxed">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Subscribe to stay connected.
+      </p>
+      <NewsletterForm />
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Handle projects page newsletter form
+  const projectsForm = document.getElementById('projects-newsletter-form') as HTMLFormElement;
+  const projectsEmailInput = document.getElementById('projects-newsletter-email') as HTMLInputElement;
+  const projectsMessageDiv = document.getElementById('projects-newsletter-message') as HTMLDivElement;
+
+  if (projectsForm) {
+    projectsForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const email = projectsEmailInput.value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      
+      if (!emailRegex.test(email)) {
+        projectsMessageDiv.textContent = 'Please enter a valid email address.';
+        projectsMessageDiv.className = 'text-white text-sm font-body';
+        projectsMessageDiv.classList.remove('hidden');
+        return;
+      }
+
+      console.log('Projects newsletter subscription:', { email, timestamp: new Date().toISOString() });
+      
+      projectsMessageDiv.textContent = 'Thank you for subscribing!';
+      projectsMessageDiv.className = 'text-white text-sm font-body font-bold';
+      projectsMessageDiv.classList.remove('hidden');
+      
+      projectsEmailInput.value = '';
+      
+      setTimeout(() => {
+        projectsMessageDiv.classList.add('hidden');
+      }, 5000);
+    });
+  }
+</script>
