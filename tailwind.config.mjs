@@ -8,6 +8,8 @@ export default {
         'violent-red-dark': '#cc001b',
         'text-primary': '#000000',
         'text-secondary': '#333333',
+        // a soft off-white/milk shade for backgrounds
+        'milk': '#f5f5f0',
       },
       fontFamily: {
         'heading': ['Khand', 'sans-serif'],

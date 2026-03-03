@@ -36,6 +36,10 @@ astro-portfolio/
 └── package.json                  # Dependencies
 ```
 
+## The Philosophy
+
+> "I don't just optimize for traffic—I optimize for profit and pipeline."
+
 ## Getting Started
 
 ### Prerequisites

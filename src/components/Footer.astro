@@ -1,25 +1,22 @@
 ---
 // Footer Component
-// Minimal footer with copyright and optional social links
+// Minimal footer with copyright and social links placeholder
+const currentYear = new Date().getFullYear();
 ---
 
-<footer class="border-t-2 border-black bg-white">
-  <div class="container mx-auto px-6 py-12">
-    <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-      <!-- Copyright -->
-      <p class="font-body text-text-secondary text-sm">
-        © {new Date().getFullYear()} Avalumun Sekulla Nyior. All rights reserved.
-      </p>
-
-      <!-- Social Links (Optional - add your social media links here) -->
-      <div class="flex space-x-6">
-        <!-- Placeholder for social links -->
-        <!-- Uncomment and add your social media links:
-        <a href="#" class="text-text-secondary hover:text-violent-red transition-colors" aria-label="LinkedIn">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">...</svg>
-        </a>
-        -->
-      </div>
+<footer class="bg-white border-t border-gray-200 py-8 px-4">
+  <div class="max-w-4xl mx-auto">
+    <p class="text-center text-text-secondary text-sm">
+      © {currentYear} All rights reserved.
+    </p>
+    
+    <!-- Social links placeholder for later -->
+    <!-- 
+    <div class="flex justify-center gap-6 mt-4">
+      <a href="#" class="text-text-secondary hover:text-violent-red transition-colors">Twitter</a>
+      <a href="#" class="text-text-secondary hover:text-violent-red transition-colors">LinkedIn</a>
+      <a href="#" class="text-text-secondary hover:text-violent-red transition-colors">GitHub</a>
     </div>
+    -->
   </div>
 </footer>

@@ -13,7 +13,8 @@
   }
 
   body {
-    @apply bg-white text-text-primary font-body antialiased;
+    /* lighter 'milk' background is easier on the eyes than stark white */
+    @apply bg-milk text-text-primary font-body antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {

@@ -1,0 +1,103 @@
+---
+// Page for SEO checklist with tickable items
+import Layout from '../layouts/Layout.astro';
+import { seoChecklist } from '../data/seoChecklist.js';
+
+// generate a unique key for localStorage
+const storageKey = 'seoChecklistState';
+---
+
+<Layout title="SEO Checklist | Avalumun Sekulla Nyior" description="Downloadable and interactive SEO checklist for B2B SaaS clients" currentPage="/seo-checklist">
+  <section class="container mx-auto px-6 py-24">
+    <h1 class="font-heading font-bold text-5xl mb-12 text-text-primary text-center">
+      B2B SaaS SEO Checklist
+    </h1>
+    <p class="text-center mb-8">
+      <a href="/seo-checklist.txt" download class="text-violent-red hover:underline">
+        Download raw checklist
+      </a>
+    </p>
+
+    <div class="space-y-16">
+      {seoChecklist.map(({ section, items }) => (
+        <div>
+          <h2 class="font-heading font-bold text-3xl mb-6 text-text-primary">
+            {section}
+          </h2>
+          <ul class="space-y-2">
+            {items.map((item, idx) => (
+              <li class="flex items-center">
+                <input
+                  type="checkbox"
+                  class="mr-3 h-5 w-5"
+                  data-section={section}
+                  data-index={idx}
+                />
+                <span class="font-body text-lg text-text-secondary">
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <p class="mt-12 text-center font-body text-sm text-text-secondary">
+      Downloaded from: <a href="https://avalumunseo.com" class="text-violent-red hover:underline">avalumunseo.com</a>
+    </p>
+  </section>
+
+  <script>
+    // persist checkbox state in localStorage
+    const storageKey = 'seoChecklistState';
+
+    function loadState() {
+      try {
+        const str = localStorage.getItem(storageKey);
+        if (!str) return {};
+        return JSON.parse(str);
+      } catch {
+        return {};
+      }
+    }
+
+    function saveState(state) {
+      localStorage.setItem(storageKey, JSON.stringify(state));
+    }
+
+    function applyState(state) {
+      const checkboxes = document.querySelectorAll('input[type=checkbox]');
+      checkboxes.forEach((cb) => {
+        const section = cb.dataset.section;
+        const idx = cb.dataset.index;
+        if (state[section] && state[section][idx]) {
+          cb.checked = true;
+        }
+      });
+    }
+
+    function gatherState() {
+      const state = {};
+      const checkboxes = document.querySelectorAll('input[type=checkbox]');
+      checkboxes.forEach((cb) => {
+        const section = cb.dataset.section;
+        const idx = cb.dataset.index;
+        state[section] = state[section] || {};
+        state[section][idx] = cb.checked;
+      });
+      return state;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const state = loadState();
+      applyState(state);
+
+      document.querySelectorAll('input[type=checkbox]').forEach((cb) => {
+        cb.addEventListener('change', () => {
+          saveState(gatherState());
+        });
+      });
+    });
+  </script>
+</Layout>

@@ -32,6 +32,47 @@ const { title, description = 'Personal portfolio website for SEO/AEO optimizatio
     <meta name="twitter:description" content={description} />
     
     <title>{title}</title>
+
+    <!-- Drift Chatbot Widget -->
+    <script>
+      "use strict";
+      !function() {
+        var t = window.driftt = window.drift = window.drift || [], e = !1;
+        if (!t.init) return t.invoked = !0, void (t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ].reduce(function(e, n) {
+          return e[n] = function() {
+            var e = Array.prototype.slice.call(arguments);
+            return e.unshift(n), t.push(e), t;
+          }, e
+        }, {}));
+        e = navigator.userAgent.indexOf("Edge") > -1;
+        var n = document.charset || document.characterSet;
+        n = !n || "utf" === n.substr(0, 3) ? "utf-8" : n, t.config = function(t) {
+          var n = !1;
+          return function() {
+            n || ((n = !0), window.setTimeout(function() { n = !1 }, 1e3));
+            for (var e = 0; e < arguments.length; ++e) console.log(arguments[e]);
+          } .apply(null, arguments);
+        };
+        var r = document.createElement("iframe");
+        r.src = "about:blank", r.async = !0, r.model = function(t) { return function() { return t } }, e && (r.src = void 0);
+        var c = document.getElementsByTagName("script")[0];
+        c.parentNode.insertBefore(r, c);
+        try {
+          t.location = window.self.location.href;
+        } catch (t) {
+          t.location = window.top.location.href;
+        }
+        r.onload = function() {
+          var n = r.contentWindow.document;
+          n.open(), n.write('<!DOCTYPE html><html><head><meta charset="' + charset + '"></head><body></body></html>'), n.close();
+          var e = n.createElement("script");
+          e.src = "https://cdn.driftt.com/inttoch.js", r.contentWindow.drift = window.drift, r.contentWindow.document.getElementsByTagName("head")[0].appendChild(e);
+        };
+        t.identify = function(n) { window.drift.userId = n.userId, window.drift.userEmail = n.email }, window.drift.load = function(n) { window.drift.config = n, t.call("config", n) };
+      }();
+      // REPLACE_WITH_YOUR_WORKSPACE_ID below with your actual Drift workspace ID
+      window.drift.RAPID_ID = "REPLACE_WITH_YOUR_WORKSPACE_ID";
+    </script>
   </head>
   <body>
     <Header currentPage={currentPage} />
